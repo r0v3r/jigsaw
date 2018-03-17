@@ -65,6 +65,9 @@
   font-size: 0.5rem;
   text-decoration: none;
 }
+.wrapper nav a.active {
+  background: #ececec;
+}
 .wrapper.in {
   display: block;
 }
@@ -79,7 +82,7 @@
     <div class="wrapper">
         <img src="../assets/menu-bg.jpg">
         <nav>
-            <a href="#/example" @click="onClose">
+            <a class="active" href="#/example" @click="onClose">
                 <img src="../assets/case.svg"><span>案例展示</span>
             </a>
             <a href="#/company" @click="onClose">
@@ -115,18 +118,16 @@ export default {
     }
   },
   methods: {
-    onClose() {
+    onClose(event) {
       this.$emit("onClose");
     },
     activeChange() {
       let $shader = this.$el.querySelector(".shader");
       let $wrapper = this.$el.querySelector(".wrapper");
       if (this.active) {
-        console.log("open");
         $shader.classList = "shader in animated fadeIn";
         $wrapper.classList = "wrapper in animated slideInLeft";
       } else {
-        console.log("close");
         $shader.classList = "shader animated fadeOut";
         $wrapper.classList = "wrapper animated slideOutLeft";
         setTimeout(() => {
@@ -134,10 +135,31 @@ export default {
           $wrapper.classList.add("out");
         }, 300);
       }
+    },
+    routeChange() {
+      let $anchors = this.$el.querySelectorAll("nav a");
+      for (let $anchor of $anchors) {
+        $anchor.classList = "";
+      }
+      switch (this.$route.path) {
+        case "/example":
+          $anchors.item(0).classList = "active";
+          break;
+        case "/company":
+          $anchors.item(1).classList = "active";
+          break;
+        case "/partner":
+          $anchors.item(2).classList = "active";
+          break;
+        case "/about":
+          $anchors.item(3).classList = "active";
+          break;
+      }
     }
   },
   watch: {
-    active: "activeChange"
+    active: "activeChange",
+    $route: "routeChange"
   }
 };
 </script>

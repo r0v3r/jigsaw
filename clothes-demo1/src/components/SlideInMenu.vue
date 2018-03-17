@@ -107,6 +107,8 @@ export default {
     return {};
   },
   mounted() {
+    this.routeChange();
+
     let $shader = this.$el.querySelector(".shader");
     let $wrapper = this.$el.querySelector(".wrapper");
     if (this.active) {

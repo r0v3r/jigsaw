@@ -1,9 +1,9 @@
 <template>
   <div id="app">
      <header class="header">
-      <div class="menu-button" @click="menuActive=true">
+      <button class="menu-button" @click="menuActive=true">
           <img src="./assets/menu.svg">
-      </div>
+      </button>
       <div class="caption"><b>LOGO</b></div>
       <slide-in-menu :active="menuActive" @onClose="menuActive=false"></slide-in-menu>
     </header>
@@ -18,7 +18,8 @@ export default {
   name: "App",
   data() {
     return {
-      menuActive: false
+      menuActive: false,
+      cnt: 1
     };
   },
   created() {
@@ -48,7 +49,10 @@ body {
   margin: 0;
   padding: 0;
 }
-div {
+div,
+section,
+header {
+  touch-action: auto;
   box-sizing: border-box;
   background: #ffffff;
 }

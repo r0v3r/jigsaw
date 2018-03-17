@@ -132,7 +132,7 @@ export default {
         setTimeout(() => {
           $shader.classList.add("out");
           $wrapper.classList.add("out");
-        }, 1000);
+        }, 300);
       }
     }
   },

@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Example from "../pages/Example.vue";
 import Company from "../pages/Company.vue";
 import Partners from "../pages/Partners.vue";
+import Card from "../pages/Card.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -25,6 +26,11 @@ export default new Router({
       path: "/partner",
       name: "partner",
       component: Partners
+    },
+    {
+      path: "/about",
+      name: "about",
+      component: Card
     }
   ]
 });

@@ -7,15 +7,18 @@
 }
 section {
   position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  display: none;
   width: 80%;
   margin: 10px auto;
   padding: 12px;
   max-width: 400px;
   box-shadow: 0 3px 6px #cdcdcd;
+}
+section.in {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 section > img {
   max-width: 100%;
@@ -68,7 +71,20 @@ export default {
       ]
     };
   },
+  mounted() {
+    this.showNext(0);
+  },
   methods: {
+    showNext(index) {
+      if (index < this.partners.length) {
+        let $section = this.$el.querySelectorAll("section").item(index);
+        $section.classList = "in animated slideInUp";
+        setTimeout(() => {
+          index = index + 1;
+          this.showNext(index);
+        }, 100);
+      }
+    },
     toggleMask(index) {
       let $section = this.$el.querySelectorAll("section").item(index);
       let $mask = $section.querySelector(".mask");

@@ -23,9 +23,8 @@ export default {
     };
   },
   created() {
-    let windowWidth = document.body.clientWidth;
-    let $html = document.querySelector("html");
-    $html.style.fontSize = windowWidth / 10 + "px";
+    this.changeHtmlFontSize();
+    window.onresize = this.changeHtmlFontSize();
   },
   mounted() {
     let $header = this.$el.querySelector("header");
@@ -33,8 +32,11 @@ export default {
     $header.classList.add("fadeIn");
   },
   methods: {
-    onChangeRoute() {
-      // switch(this.$route)
+    onChangeRoute() {},
+    changeHtmlFontSize() {
+      let windowWidth = document.body.clientWidth;
+      let $html = document.querySelector("html");
+      $html.style.fontSize = windowWidth / 10 + "px";
     }
   },
   watch: {

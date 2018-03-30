@@ -56,7 +56,7 @@
   <div>
       <div class="card">
         <header>
-          <img class="logo" src="/static/about/logo.jpeg">
+          <img class="logo" src="static/about/logo.jpeg">
             <b>XXX先生/女士</b>
             <span>总经理</span>
         </header>

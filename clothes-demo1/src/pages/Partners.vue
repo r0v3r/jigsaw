@@ -62,12 +62,12 @@ export default {
   data() {
     return {
       partners: [
-        { logo: "/static/partner/1.jpg", name: "优衣库", mask: [""] },
-        { logo: "/static/partner/2.jpg", name: "杉杉", mask: [""] },
-        { logo: "/static/partner/3.jpg", name: "edwin", mask: [""] },
-        { logo: "/static/partner/4.png", name: "H&M", mask: [""] },
-        { logo: "/static/partner/5.jpg", name: "Forever 21", mask: [""] },
-        { logo: "/static/partner/6.png", name: "七匹狼", mask: [""] }
+        { logo: "static/partner/1.jpg", name: "优衣库", mask: [""] },
+        { logo: "static/partner/2.jpg", name: "杉杉", mask: [""] },
+        { logo: "static/partner/3.jpg", name: "edwin", mask: [""] },
+        { logo: "static/partner/4.png", name: "H&M", mask: [""] },
+        { logo: "static/partner/5.jpg", name: "Forever 21", mask: [""] },
+        { logo: "static/partner/6.png", name: "七匹狼", mask: [""] }
       ]
     };
   },

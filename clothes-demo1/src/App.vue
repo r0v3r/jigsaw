@@ -66,8 +66,8 @@ li {
 li {
   list-style: none;
 }
-.animated {
-  animation-duration: 0.3s;
+* {
+  animation-duration: 0.3s !important;
   animation-fill-mode: both;
 }
 .header {
